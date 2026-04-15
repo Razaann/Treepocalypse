@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://cs7sty3mwa3on"]
+
+[ext_resource type="Texture2D" uid="uid://b1tik8vrsmffb" path="res://Player/Player Assets/Tilemap/tilemap_packed.png" id="1_m045i"]
+[ext_resource type="Script" uid="uid://gaqd421jvkn4" path="res://Player/Player Scripts/player.gd" id="1_ndwia"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m045i"]
+atlas = ExtResource("1_m045i")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndwia"]
+atlas = ExtResource("1_m045i")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hift2"]
+atlas = ExtResource("1_m045i")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ndwia"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m045i")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ndwia")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hift2")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ndwia"]
+radius = 12.0
+
+[node name="Player" type="CharacterBody2D" unique_id=106416881]
+script = ExtResource("1_ndwia")
+
+[node name="PlayerSprite" type="AnimatedSprite2D" parent="." unique_id=181972778]
+sprite_frames = SubResource("SpriteFrames_ndwia")
+animation = &"walk"
+autoplay = "idle"
+frame_progress = 0.19057356
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1585076962]
+shape = SubResource("CircleShape2D_ndwia")
