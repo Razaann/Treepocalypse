@@ -38,7 +38,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ndwia"]
-radius = 12.0
+radius = 6.0
 
 [node name="Player" type="CharacterBody2D" unique_id=106416881]
 script = ExtResource("1_ndwia")
@@ -50,4 +50,5 @@ autoplay = "idle"
 frame_progress = 0.19057356
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1585076962]
+position = Vector2(0, 8)
 shape = SubResource("CircleShape2D_ndwia")
