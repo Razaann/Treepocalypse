@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b1tik8vrsmffb" path="res://Player/Player Assets/Tilemap/tilemap_packed.png" id="1_m045i"]
 [ext_resource type="Script" uid="uid://gaqd421jvkn4" path="res://Player/Player Scripts/player.gd" id="1_ndwia"]
+[ext_resource type="PackedScene" uid="uid://23te33quhv57" path="res://Player/Player Scene/gun.tscn" id="3_hift2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m045i"]
 atlas = ExtResource("1_m045i")
@@ -52,3 +53,6 @@ frame_progress = 0.19057356
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1585076962]
 position = Vector2(0, 8)
 shape = SubResource("CircleShape2D_ndwia")
+
+[node name="gun" parent="." unique_id=754929612 instance=ExtResource("3_hift2")]
+position = Vector2(0, 15)

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dyt7qffvnoivs"]
+
+[ext_resource type="Texture2D" uid="uid://0ktwbqfvwaiy" path="res://Player/Player Assets/Tilemap/weapons_tilemap_packed.png" id="1_sv4u3"]
+[ext_resource type="Script" uid="uid://b8b2ylrdgt7pf" path="res://Player/Player Scripts/bullet.gd" id="1_xiq3n"]
+
+[node name="Bullet" type="Node2D" unique_id=332507488]
+script = ExtResource("1_xiq3n")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=41902099]
+texture = ExtResource("1_sv4u3")
+region_enabled = true
+region_rect = Rect2(72, 48, 24, 24)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1351316156]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
