@@ -1,0 +1,37 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://8fwbkmmx441f"]
+
+[ext_resource type="Texture2D" uid="uid://b1tik8vrsmffb" path="res://Player/Player Assets/Tilemap/tilemap_packed.png" id="1_c7mh5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m045i"]
+atlas = ExtResource("1_c7mh5")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndwia"]
+atlas = ExtResource("1_c7mh5")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hift2"]
+atlas = ExtResource("1_c7mh5")
+region = Rect2(24, 0, 24, 24)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m045i")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ndwia")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hift2")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 6.0
+}]

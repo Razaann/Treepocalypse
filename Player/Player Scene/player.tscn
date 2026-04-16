@@ -1,51 +1,54 @@
 [gd_scene format=3 uid="uid://cs7sty3mwa3on"]
 
-[ext_resource type="Texture2D" uid="uid://b1tik8vrsmffb" path="res://Player/Player Assets/Tilemap/tilemap_packed.png" id="1_m045i"]
 [ext_resource type="Script" uid="uid://gaqd421jvkn4" path="res://Player/Player Scripts/player.gd" id="1_ndwia"]
+[ext_resource type="SpriteFrames" uid="uid://8fwbkmmx441f" path="res://Player/Player Scene/PlayerSpriteFrames.tres" id="2_hift2"]
 [ext_resource type="PackedScene" uid="uid://23te33quhv57" path="res://Player/Player Scene/gun.tscn" id="3_hift2"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_m045i"]
-atlas = ExtResource("1_m045i")
-region = Rect2(0, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ndwia"]
-atlas = ExtResource("1_m045i")
-region = Rect2(0, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hift2"]
-atlas = ExtResource("1_m045i")
-region = Rect2(24, 0, 24, 24)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ndwia"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m045i")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ndwia")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hift2")
-}],
-"loop": true,
-"name": &"walk",
-"speed": 6.0
-}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ndwia"]
 radius = 6.0
+
+[sub_resource type="Animation" id="Animation_hift2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_xl5ue"]
+resource_name = "idle"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 0.9)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1meth"]
+_data = {
+&"RESET": SubResource("Animation_hift2"),
+&"idle": SubResource("Animation_xl5ue")
+}
 
 [node name="Player" type="CharacterBody2D" unique_id=106416881]
 script = ExtResource("1_ndwia")
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="." unique_id=181972778]
-sprite_frames = SubResource("SpriteFrames_ndwia")
+sprite_frames = ExtResource("2_hift2")
 animation = &"walk"
 autoplay = "idle"
 frame_progress = 0.19057356
@@ -56,3 +59,7 @@ shape = SubResource("CircleShape2D_ndwia")
 
 [node name="gun" parent="." unique_id=754929612 instance=ExtResource("3_hift2")]
 position = Vector2(0, 15)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1507025404]
+libraries/ = SubResource("AnimationLibrary_1meth")
+autoplay = &"idle"

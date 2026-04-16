@@ -1,13 +1,15 @@
 extends Node2D
 
-
-# Called when the node enters the scene tree for the first time.
-#func _ready() -> void:
-	#pass # Replace with function body.
+# STILL CONCEPT, TRY TO FIND A WAY TO MAKE IT INTO FSM
+# SO IT'S NOT GONNA BE SPAGHETTI
 
 const BULLET = preload("res://Player/Player Scene/bullet.tscn")
 @onready var muzzle: Marker2D = $Muzzle
 @onready var shoot_sfx: AudioStreamPlayer2D = $Shoot_Sfx
+
+# THERE'S PROBABLY A BETTER WAY TO HANDLE THIS (BENERIN)
+var can_shoot: bool = true
+var SHOOT_COOLDOWN: float = 0.1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -22,10 +24,15 @@ func _process(delta: float) -> void:
 	else:
 		scale.y = 1
 	
-	if Input.is_action_just_pressed("shoot"):
-		var bullet_instance = BULLET.instantiate()
-		get_tree().root.add_child(bullet_instance)
-		shoot_sfx.play()
-		bullet_instance.global_position = muzzle.global_position
-		bullet_instance.rotation = rotation
-		
+	if Input.is_action_pressed("shoot") and can_shoot:
+		shoot()
+
+func shoot():
+	can_shoot = false
+	var bullet_instance = BULLET.instantiate()
+	get_tree().root.add_child(bullet_instance)
+	shoot_sfx.play()
+	bullet_instance.global_position = muzzle.global_position
+	bullet_instance.rotation = rotation
+	await get_tree().create_timer(SHOOT_COOLDOWN).timeout
+	can_shoot = true

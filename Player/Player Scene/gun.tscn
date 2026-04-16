@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://jmrvjp07vfyq" path="res://Player/Player Scripts/gun.gd" id="1_gvirn"]
 [ext_resource type="Texture2D" uid="uid://0ktwbqfvwaiy" path="res://Player/Player Assets/Tilemap/weapons_tilemap_packed.png" id="1_qy4jw"]
-[ext_resource type="AudioStream" uid="uid://bn46g4moqgvk5" path="res://kenney_desert-shooter-pack_1.0/Sounds/shoot-g.ogg" id="3_2phu2"]
+[ext_resource type="AudioStream" uid="uid://dfukcavmsdtuo" path="res://Player/Player Assets/Sound/Shooting_SFX.ogg" id="3_2phu2"]
 
 [node name="gun" type="Node2D" unique_id=754929612]
 script = ExtResource("1_gvirn")
@@ -15,7 +15,7 @@ region_rect = Rect2(120, 0, 24, 24)
 
 [node name="Shoot_Sfx" type="AudioStreamPlayer2D" parent="." unique_id=2110209091]
 stream = ExtResource("3_2phu2")
-volume_db = -20.0
+volume_db = -10.0
 
 [node name="Muzzle" type="Marker2D" parent="." unique_id=53190740]
 position = Vector2(12, -4)
