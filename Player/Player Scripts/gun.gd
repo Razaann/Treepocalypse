@@ -31,8 +31,10 @@ func shoot():
 	can_shoot = false
 	var bullet_instance = BULLET.instantiate()
 	get_tree().root.add_child(bullet_instance)
+	# RANDOMIZE THE SFX PITCH (BENERIN)
 	shoot_sfx.play()
 	bullet_instance.global_position = muzzle.global_position
-	bullet_instance.rotation = rotation
+	var spread_angle = randf_range(-5, 5)
+	bullet_instance.rotation = rotation + deg_to_rad(spread_angle)
 	await get_tree().create_timer(SHOOT_COOLDOWN).timeout
 	can_shoot = true

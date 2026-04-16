@@ -5,6 +5,10 @@ const ACCELERATION: int = 1400
 const FRICTION: int = 1000
 
 @onready var player_sprite: AnimatedSprite2D = $PlayerSprite
+@onready var player_animation: AnimationPlayer = $AnimationPlayer
+
+#func _ready() -> void:
+	#player_animation.play("idle")
 
 func _process(delta: float) -> void:
 	# Mouse position

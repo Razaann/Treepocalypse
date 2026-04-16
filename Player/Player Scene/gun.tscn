@@ -15,7 +15,7 @@ region_rect = Rect2(120, 0, 24, 24)
 
 [node name="Shoot_Sfx" type="AudioStreamPlayer2D" parent="." unique_id=2110209091]
 stream = ExtResource("3_2phu2")
-volume_db = -10.0
+volume_db = -15.0
 
 [node name="Muzzle" type="Marker2D" parent="." unique_id=53190740]
 position = Vector2(12, -4)
