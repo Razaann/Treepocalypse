@@ -9,7 +9,9 @@ const BULLET = preload("res://Player/Player Scene/bullet.tscn")
 
 # THERE'S PROBABLY A BETTER WAY TO HANDLE THIS (BENERIN)
 var can_shoot: bool = true
-var SHOOT_COOLDOWN: float = 0.1
+@export var SHOOT_COOLDOWN: float = 0.1
+@export var MAX_SPREAD_DEGREE: float = 5
+@export var MIN_SPREAD_DEGREE: float = -5
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -34,7 +36,7 @@ func shoot():
 	# RANDOMIZE THE SFX PITCH (BENERIN)
 	shoot_sfx.play()
 	bullet_instance.global_position = muzzle.global_position
-	var spread_angle = randf_range(-5, 5)
+	var spread_angle = randf_range(MIN_SPREAD_DEGREE, MAX_SPREAD_DEGREE)
 	bullet_instance.rotation = rotation + deg_to_rad(spread_angle)
 	await get_tree().create_timer(SHOOT_COOLDOWN).timeout
 	can_shoot = true

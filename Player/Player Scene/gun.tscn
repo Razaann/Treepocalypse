@@ -6,6 +6,8 @@
 
 [node name="gun" type="Node2D" unique_id=754929612]
 script = ExtResource("1_gvirn")
+MAX_SPREAD_DEGREE = 10.0
+MIN_SPREAD_DEGREE = -10.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=502189582]
 position = Vector2(2, -2)

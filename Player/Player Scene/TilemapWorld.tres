@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" format=3 uid="uid://c71p1n17rw5vp"]
 
-[ext_resource type="Texture2D" uid="uid://ck57dqgwnatcw" path="res://kenney_desert-shooter-pack_1.0/PNG/Tiles/Tilemap/tilemap_packed.png" id="1_8htag"]
+[ext_resource type="Texture2D" uid="uid://ck57dqgwnatcw" path="res://zenney_desert-shooter-pack_1.0/PNG/Tiles/Tilemap/tilemap_packed.png" id="1_8htag"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g4tv7"]
 texture = ExtResource("1_8htag")
