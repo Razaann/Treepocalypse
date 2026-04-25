@@ -26,6 +26,7 @@ window/stretch/aspect="keep_height"
 [global_group]
 
 wall=""
+enemy=""
 
 [input]
 
