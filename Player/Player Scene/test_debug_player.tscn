@@ -13,8 +13,6 @@ tile_set = ExtResource("1_4qulm")
 [node name="Player" parent="." unique_id=106416881 instance=ExtResource("2_g4tv7")]
 position = Vector2(320, 192)
 
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=791377288]
-
 [node name="Node" type="Node" parent="." unique_id=1900763698]
 
 [node name="TestEnemy" parent="Node" unique_id=508598073 instance=ExtResource("3_1kbfl")]

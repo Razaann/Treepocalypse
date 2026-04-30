@@ -47,6 +47,9 @@ _data = {
 [node name="Player" type="CharacterBody2D" unique_id=106416881]
 script = ExtResource("1_ndwia")
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=529481127]
+position = Vector2(0, 8)
+
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="." unique_id=181972778]
 sprite_frames = ExtResource("2_hift2")
 animation = &"walk"
