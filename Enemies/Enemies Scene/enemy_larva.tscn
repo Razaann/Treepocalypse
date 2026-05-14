@@ -52,7 +52,7 @@ animations = [{
 radius = 6.0
 height = 20.0
 
-[node name="enemyLarva" type="CharacterBody2D" unique_id=541671175]
+[node name="enemyLarva" type="CharacterBody2D" unique_id=541671175 groups=["enemy"]]
 
 [node name="LarvaSprite" type="AnimatedSprite2D" parent="." unique_id=1722901717]
 sprite_frames = SubResource("SpriteFrames_xch33")

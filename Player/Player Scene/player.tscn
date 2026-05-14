@@ -49,6 +49,7 @@ script = ExtResource("1_ndwia")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=529481127]
 position = Vector2(0, 8)
+zoom = Vector2(2, 2)
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="." unique_id=181972778]
 sprite_frames = ExtResource("2_hift2")
@@ -62,6 +63,8 @@ shape = SubResource("CircleShape2D_ndwia")
 
 [node name="gun" parent="." unique_id=754929612 instance=ExtResource("3_hift2")]
 position = Vector2(0, 15)
+MAX_SPREAD_DEGREE = 0.0
+MIN_SPREAD_DEGREE = 0.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1507025404]
 libraries/ = SubResource("AnimationLibrary_1meth")
